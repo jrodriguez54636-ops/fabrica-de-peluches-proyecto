@@ -1,0 +1,36 @@
+#include "Fabrica.h"
+#include <iostream>
+
+using namespace std;
+
+Fabrica::Fabrica() : maquina("Maquina Principal") {
+    inventario.push_back(Material("Algodon", 100, 2.5));
+    inventario.push_back(Material("Tela", 50, 5.0));
+    inventario.push_back(Material("Relleno", 80, 3.0));
+}
+
+void Fabrica::agregarMaterial(const Material& mat) {
+    inventario.push_back(mat);
+}
+
+void Fabrica::producirPeluche(string nombre, string tipo, double precio, int tiempo) {
+    Peluche p = maquina.producirPeluche(nombre, tipo, precio, tiempo);
+    catalogo.push_back(p);
+    maquina.liberarMaquina();
+    
+    cout << "¡Peluche producido exitosamente!\n";
+}
+
+void Fabrica::mostrarInventario() const {
+    cout << "\n=== Inventario de Materiales ===\n";
+    for (const auto& m : inventario) {
+        cout << m.getNombre() << ": " << m.getCantidad() << " unidades\n";
+    }
+}
+
+void Fabrica::mostrarCatalogo() const {
+    cout << "\n=== Catálogo de Peluches ===\n";
+    for (const auto& p : catalogo) {
+        p.mostrarInfo();
+    }
+}

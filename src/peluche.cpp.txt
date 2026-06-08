@@ -1,0 +1,18 @@
+#include "Peluche.h"
+#include <iostream>
+
+using namespace std;
+
+Peluche::Peluche(string nom, string t, double p, int tiempo) 
+    : nombre(nom), tipo(t), precio(p), tiempoProduccion(tiempo) {}
+
+string Peluche::getNombre() const { return nombre; }
+string Peluche::getTipo() const { return tipo; }
+double Peluche::getPrecio() const { return precio; }
+int Peluche::getTiempoProduccion() const { return tiempoProduccion; }
+
+void Peluche::mostrarInfo() const {
+    cout << "Peluche: " << nombre << " | Tipo: " << tipo 
+         << " | Precio: $" << precio 
+         << " | Tiempo: " << tiempoProduccion << " min\n";
+}

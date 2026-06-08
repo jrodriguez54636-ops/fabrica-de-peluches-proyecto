@@ -1,0 +1,18 @@
+#include "Maquina.h"
+#include <iostream>
+
+using namespace std;
+
+Maquina::Maquina(string mod) : modelo(mod), ocupada(false) {}
+
+bool Maquina::estaOcupada() const { return ocupada; }
+
+Peluche Maquina::producirPeluche(string nombre, string tipo, double precio, int tiempo) {
+    ocupada = true;
+    Peluche nuevo(nombre, tipo, precio, tiempo);
+    return nuevo;
+}
+
+void Maquina::liberarMaquina() {
+    ocupada = false;
+}

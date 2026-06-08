@@ -1,0 +1,22 @@
+#include "Fabrica.h"
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    cout << "=== FABRICA DE PELUCHES ===\n\n";
+    
+    Fabrica miFabrica;
+    
+    miFabrica.mostrarInventario();
+    
+    miFabrica.producirPeluche("Oso Teddy", "Animal", 25.99, 45);
+    miFabrica.producirPeluche("Gato Kawaii", "Animal", 22.50, 40);
+    miFabrica.producirPeluche("Dragon Rojo", "Fantasia", 35.00, 60);
+    
+    miFabrica.mostrarCatalogo();
+    
+    cout << "\n¡Gracias por usar el sistema de la Fabrica de Peluches!\n";
+    
+    return 0;
+}
