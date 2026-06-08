@@ -1,0 +1,25 @@
+#ifndef FABRICA_H
+#define FABRICA_H
+
+#include "Material.h"
+#include "Peluche.h"
+#include "Maquina.h"
+#include <vector>
+using namespace std;
+
+class Fabrica {
+private:
+    vector<Material> inventario;
+    vector<Peluche> catalogo;
+    Maquina maquina;
+
+public:
+    Fabrica();
+    
+    void agregarMaterial(const Material& mat);
+    void producirPeluche(string nombre, string tipo, double precio, int tiempo);
+    void mostrarInventario() const;
+    void mostrarCatalogo() const;
+};
+
+#endif

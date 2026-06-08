@@ -1,0 +1,19 @@
+#ifndef MAQUINA_H
+#define MAQUINA_H
+
+#include "Peluche.h"
+using namespace std;
+class Maquina {
+private:
+    string modelo;
+    bool ocupada;
+
+public:
+    Maquina(string mod);
+    
+    bool estaOcupada() const;
+    Peluche producirPeluche(string nombre, string tipo, double precio, int tiempo);
+    void liberarMaquina();
+};
+
+#endif

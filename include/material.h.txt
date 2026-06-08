@@ -1,0 +1,26 @@
+
+#ifndef MATERIAL_H
+#define MATERIAL_H
+
+#include <string>
+using namespace std;
+
+
+class Material {
+private:
+    string nombre;
+    int cantidad;
+    double precioPorUnidad;
+
+public:
+    Material(string nom, int cant, double precio);
+    
+    string getNombre() const;
+    int getCantidad() const;
+    double getPrecioPorUnidad() const;
+    
+    void usarMaterial(int cantidadUsada);
+    void agregarStock(int cantidadAgregada);
+};
+
+#endif

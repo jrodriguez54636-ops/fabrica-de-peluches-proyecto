@@ -1,0 +1,25 @@
+#ifndef PELUCHE_H
+#define PELUCHE_H
+
+#include <string>
+using namespace std;
+
+class Peluche {
+private:
+    string nombre;
+    string tipo;
+    double precio;
+    int tiempoProduccion;
+
+public:
+    Peluche(string nom, string t, double p, int tiempo);
+    
+    string getNombre() const;
+    string getTipo() const;
+    double getPrecio() const;
+    int getTiempoProduccion() const;
+    
+    void mostrarInfo() const;
+};
+
+#endif
